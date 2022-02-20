@@ -7,20 +7,20 @@ Scope of the project: Use Machine Learning to detect SQL injection.
 Directory structure:
 ```
 sqli_detection
-├── streamlit_app.py			Main file to run the streamlit app_
-|── prediction_module.py	Prediction module with all the utility functions
-├── requirements.txt			Dependencies
+├── streamlit_app.py     Main file to run the streamlit app_
+|── prediction_module.py Prediction module with all the utility functions
+├── requirements.txt     Dependencies
 ├── README.md
-├── Documentation					Folder for documentation
-├── Notebook							Folder for jupyter notebooks
-|── data									Folder for data
+├── Documentation        Folder for documentation
+├── Notebook             Folder for jupyter notebooks
+|── data                 Folder for data
 ```
 **NOTE**: _You can ignore the files in the Documentation and Notebook folder._
 
 ## How to run in local
 Clone the repo using git clone:
 ```
-git clone	https://github.com/mayurkagathara/sqli_detection  
+git clone https://github.com/mayurkagathara/sqli_detection  
 ```
 Install dependencies using pip:  
 ```
