@@ -3,11 +3,30 @@ import re
 import pandas as pd
 import numpy as np
 
-_CWD = '.' #for google drive
-with open(_CWD+'/model/final_RFC_FE_model.model', 'rb') as file:
+import os
+import requests
+
+_CWD = os.getcwd() #for google drive
+
+final_RFC_FE_model_file = os.path.join(_CWD,'model','final_RFC_FE_model.model')
+tfidf_vec_file = os.path.join(_CWD,'model','tfidf_vec.sav')
+
+with open(final_RFC_FE_model_file, 'rb') as file:
 	RFC_FE_model = pickle.load(file)
-with open(_CWD+'/model/tfidf_vec.sav', 'rb') as file:
+with open(tfidf_vec_file, 'rb') as file:
 	TFIDF_vectorizer = pickle.load(file)
+
+if not os.path.isfile(final_RFC_FE_model_file):
+    url = r'https://github.com/mayurkagathara/sqli_detection/blob/master/model/final_RFC_FE_model.model?raw=true'
+    resp = requests.get(url)
+    with open(final_RFC_FE_model_file, 'wb') as fopen:
+        fopen.write(resp.content)
+
+if not os.path.isfile(tfidf_vec_file):
+    url = r'https://github.com/mayurkagathara/sqli_detection/blob/master/model/tfidf_vec.sav?raw=true'
+    resp = requests.get(url)
+    with open(tfidf_vec_file, 'wb') as fopen:
+        fopen.write(resp.content)
 
 def clean_query(input_string):
 	cleaned = re.sub('[^a-zA-Z0-9\s]',' ',input_string)
