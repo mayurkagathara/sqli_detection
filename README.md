@@ -11,6 +11,9 @@ sqli_detection
 |── prediction_module.py Prediction module with all the utility functions
 ├── requirements.txt     Dependencies
 ├── README.md
+├── Model
+    ├──final_RFC_FE_model.model  Pickled best RF Model
+    ├──tfidf_vec.sav             Pickled TFIDF vectorizer
 ├── Documentation        Folder for documentation
 ├── Notebook             Folder for jupyter notebooks
 |── data                 Folder for data
